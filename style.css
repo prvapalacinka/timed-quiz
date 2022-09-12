@@ -454,3 +454,60 @@ footer .next_btn{
 footer .next_btn:hover{
 background: #31572c;
 }
+
+.result_box {
+    background-color: #ffffff;
+    width: 450px;
+    padding: 25px 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate (-50%, -50%) scale(0.9);
+
+}
+
+.result_box .icon{
+    font-size: 100px;
+    color: #31572c;
+    margin-bottom: 10px;
+
+}
+
+.result_box .complete_text {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.result_box .score_text span {
+    display: flex;
+}
+
+.score_text span p{
+    padding: 0 4px;
+    font-weight: 600;
+}
+
+.result_box .buttons{
+    display: flex;
+    margin: 20px 0;
+
+}
+
+.result_box .buttons button{
+    margin: 0 10px;
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 2px solid #31572c;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
