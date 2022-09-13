@@ -8,110 +8,39 @@
   <title>HTML 5 Boilerplate</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<!-- <header class="header">
+<header class="header">
     <p class="highscore">High Score</p>
     <p class="title">Timed Quiz</p>
-    <p class="timer">Time left:</p>
+    <p>Time Remaining: <span id="timeRemaining">60</span></p>
 
 </header> 
-<br> -->
-<div class="start_btn"><button>Start Quiz</button></div>
-<div class="info_box">
-  <div class="info_title">
-    <span>Quiz Rules</span>
-  </div>
-  <div class="rules_list">
-    <div class="rules">1. You have <span>20 seconds</span> for each question.</div>
-    <div class="rules">2. You can only answer each question once.</div>
-    <div class="rules">3. If you get a question wrong, the timer will decrease by 3 seconds.</div>
-    <div class="rules">4. You can only restart the quiz once it is completed.</div>
-    <div class="rules">5. The quiz results will be displayed at the end of the quiz.</div>
-  </div>
-  <div class="buttons">
-    <button class="restart">Restart</button>
-    <button class="continue">Next</button>
-  </div>
-</div>
-<div class="quiz_box">
-  <header>
-    <div class="title">Timed Quiz</div>
-    <div class="timer">
-      <div class="timer_text">Time Remaining</div>
-      <div class="time_counter">20</div>
-    </div>
-  </header>
-  <section class="question_box">
-    <div class="question_text">
-      <span>What does HTML stand for?</span>
-    </div>
-    <div class="option_list">
-      <div class="option">
-        <span>Hyper text Preprocessor</span>
-        <div class="icon tick"><i class=".fas.fa-check"></i></div>
-      </div>
-      <div class="option">
-        <span>Hyper Text Markup Language</span>
-        <div class="icon cross"><i class=".fas.fa-check"></i></div>
-      </div>
-      <div class="option">
-        <span>Hyper Text Multiple Language</span>
-      </div>
-      <div class="option">
-        <span>Hyper Text Makeout Language</span>
-      </div>
-    </div>
-  </section>
+<br>
 
-  <footer>
-    <div class="total_que">
-      <span>
-        <p>2</p>of<p>5</p>Questions
-      </span>
-    </div>
-    <button class="next_btn">Next Question</button>
-  </footer>
-</div>
-
-<div class="result_box">
-  <div class="icon">
-    <i class="fas fa-crown"></i>
-  </div>
-  <div class="complete_text">You've completed the Quiz.</div>
-  <div class="score_text">
-    <span>You scored a <p>2</p> out of <p>5</p></span>
-  </div>
-  <div class="buttons">
-    <button class="restart">Redo Quiz</button>
-    <button class="quit">Quit Quiz</button>
-
-  </div>
-</div>
-
-<!-- <body>
-    <script src="index.js"></script>
+ <body>
     <br>
     <div class="container_div">
       <h1>What is CSS used for? :</h1>
       <ul>
-        <button class="button1">
+        <button class="option">
           <li>1. To make JavaScript look pretty</li>
         </button>
-        <button class="button2">
+        <button class="option">
           <li>2. To design HTMl elements on a webpage</li>
         </button>
-        <button class="button3">
+        <button class="option">
           <li>3. To hack into a database</li>
         </button>
-        <button class="button4">
+        <button class="option">
           <li>4. To save content on a webpage</li>
         </button>
       </ul>
     </div>
+    <div><button id="start" class="startbtn">Start Quiz</button></div>
     <footer class="Q_N_buttons">
       <div class="quit">Restart Quiz</div>
       <div class="next">Next Question</div>
-    </footer> -->
-
+    </footer> 
+    <script src="index.js"></script>
 </body>
 
 </html>
