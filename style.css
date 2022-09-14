@@ -3,6 +3,7 @@
     --darkblue: #14213d;
     --backgroundblue: #0053ba;
 }
+
 .header {
     display: flex;
     justify-content: space-around;
@@ -29,6 +30,8 @@ ul {}
     color: #14213d;
 
 }
+
+
 
 .timer {
     color: #14213d;
@@ -63,7 +66,7 @@ ul {}
     background-color: #14213d;
     color: #ffffff;
     padding: 20px;
-} 
+}
 
 .option {
     display: block;
@@ -98,6 +101,8 @@ button:active {
 }
 
 .startbtn {
+    /* position:relative;
+margin-top:100%; */
     position: absolute;
     display: block;
     border-radius: 5px;
@@ -133,6 +138,39 @@ button:active {
 }
 
 
+#highscorebutton {
+    position: relative;
+    margin-top: 100%;
+    /* position: absolute;
+    display: flex; */
+    border-radius: 5px;
+    padding: 15px 30px;
+    margin: 3vw;
+    text-decoration: none;
+    background: #14213d;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+        transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
 
+button:hover,
+button:focus {
+    background: #0053ba;
+}
 
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
 
+button:active {
+    transform: scale(0.99);
+
+}

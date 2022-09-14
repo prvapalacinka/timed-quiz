@@ -9,33 +9,35 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <header class="header">
-    <p class="highscore">High Score</p>
-    <p class="title">Timed Quiz</p>
-    <p>Time Remaining: <span id="timeRemaining">60</span></p>
+  <p class="highscore">High Score</p>
+  <p class="title">Timed Quiz</p>
+  <p>Time Remaining: <span id="timeRemaining">60</span></p>
 
-</header> 
+</header>
 <br>
 
- <body>
-    <br>
-    <div class="container_div">
-      <h1 id="question"></h1>
-      <ul id="optionList">
-        <button id="option1" class="option"></button>
-        <button id="option2" class="option">
-        </button>
-        <button id="option3" class="option">
-        </button>
-        <button id="option4" class="option">
-        </button>
-      </ul>
-    </div>
-    <div><button id="start" class="startbtn">Start Quiz</button></div>
-    <footer class="Q_N_buttons">
-      <div class="quit">Restart Quiz</div>
-      <div class="next">Next Question</div>
-    </footer> 
-    <script src="index.js"></script>
+<body>
+  <br>
+  <div class="container_div">
+    <h1 id="question"></h1>
+    <ul id="optionList">
+      <button id="option1" class="option"></button>
+      <button id="option2" class="option">
+      </button>
+      <button id="option3" class="option">
+      </button>
+      <button id="option4" class="option">
+      </button>
+    </ul>
+  </div>
+  <!-- <div><button id="start" class="startbtn">Start Quiz</button></div> -->
+  <footer class="Q_N_buttons">
+    <container id="buttoncontainer">
+      <div class="highscore"><button id="highscorebutton">Highscore</button></div>
+      <div><button id="start" class="startbtn">Start Quiz</button></div>
+    </container>
+  </footer>
+  <script src="index.js"></script>
 </body>
 
 </html>
