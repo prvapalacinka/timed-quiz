@@ -4,14 +4,7 @@
 			"path": "."
 		},
 		{
-			"path": "../javascript-challenge"
-		},
-		{
-			"path": "../../CWRU-VIRT-FSF-PT-07-2022-U-LOLC/04-Web-APIs"
-		},
-		{
-			"path": "../../CWRU-VIRT-FSF-PT-07-2022-U-LOLC/05-Third-Party-APIs"
+			"path": "../../CWRU-VIRT-FSF-PT-07-2022-U-LOLC/04-Web-APIs/02-Challenge"
 		}
-	],
-	"settings": {}
+	]
 }

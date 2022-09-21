@@ -8,6 +8,9 @@ var optionTwo = document.getElementById("option2");
 var optionThree = document.getElementById("option3");
 var optionFour = document.getElementById("option4");
 
+/* var for container on/off display */
+var containerDiv = document.getElementById("containerdiv");
+
 /* counter variable */
 var counter = 1;
 
@@ -20,12 +23,34 @@ questionOne.push("What is CSS used for?",
     "To save content on a webpage");
 
 var questionTwo = [];
-questionOne.push("What color is a tiger?",
-    "Green",
-    "Orange and black",
-    "Orange and blue",
-    "Purple");
+questionTwo.push("What color is a tiger?",
+    "Greenl alkdj k jk j",
+    "Orange and blac adjflkjdfk",
+    "Orange and blue kaldfajdlfj",
+    "Purple jadkfjkadf");
 
+var questionThree = [];
+questionThree.push("What is HTML?",
+    "The contents of a webpage",
+    "A way to style the webpage",
+    "How often a page receives info",
+    "All of the above");
+
+var questionFour = [];
+questionFour.push("What is code?",
+    "Something cool",
+    "No idea",
+    "Brother man",
+    "The best thing ever");
+    
+var questionFive = [];
+questionFive.push("What is banana?",
+    "The best fruit",
+    "A way of life",
+    "Party time",
+    "All of the above");
+
+    /* timer */
 function timerCountdown() {
     var newInterval = setInterval(function () {
         timeRemaining--;
@@ -39,6 +64,8 @@ function startQuiz() {
     questionDisplay();
 
 }
+
+
 
 function questionDisplay() {
     if (counter == 1) {
@@ -55,11 +82,32 @@ function questionDisplay() {
         optionThree.textContent = questionTwo[3];
         optionFour.textContent = questionTwo[4];
     }
+    else if (counter == 3) {
+        question.textContent = questionThree[0];
+        optionOne.textContent = questionThree[1];
+        optionTwo.textContent = questionThree[2];
+        optionThree.textContent = questionThree[3];
+        optionFour.textContent = questionThree[4];
+    }
+    else if (counter == 4) {
+        question.textContent = questionFour[0];
+        optionOne.textContent = questionFour[1];
+        optionTwo.textContent = questionFour[2];
+        optionThree.textContent = questionFour[3];
+        optionFour.textContent = questionFour[4];
+    }
+    else if (counter == 5) {
+        question.textContent = questionFive[0];
+        optionOne.textContent = questionFive[1];
+        optionTwo.textContent = questionFive[2];
+        optionThree.textContent = questionFive[3];
+        optionFour.textContent = questionFive[4];
+    }
+    else (containerDisplay);
 }
 
 /* counter function */
-function counter() {
-    console.log("here");
+function incrementCounter() {
     counter += 1;
     questionDisplay();
 }
@@ -69,5 +117,29 @@ console.log(generateBtn);
 for (i = 0; i < options.length; i++) {
     console.log(options[i]);
 
-    options[i].addEventListener("click", counter)
+    options[i].addEventListener("click", incrementCounter)
+}
+
+/* display on/off */
+/* run func prior */
+function containerDisplay() {
+    if (timeRemaining <= 0) {
+        document.getElementById("containerdiv").style.display = "none";
+        document.getElementById("formdiv").style.display = "block";
+       
+    }
+}
+
+function displaySwitch () {
+    if (timeRemaining <= 0) {
+        containerDisplay();
+    }
+}
+
+while (timerRemaining > 0) {
+    document.getElementById("containerdiv").style.display = "block";
+}
+
+while (timeRemaining <= 0) {
+    document.getElementById("formdiv").style.display = "block";
 }

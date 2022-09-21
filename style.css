@@ -38,7 +38,7 @@ ul {}
 
 }
 
-.container_div {
+#containerdiv {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -173,4 +173,8 @@ button:focus {
 button:active {
     transform: scale(0.99);
 
+}
+
+#form {
+    display: none;
 }
