@@ -50,13 +50,28 @@ questionFive.push("What is banana?",
     "Party time",
     "All of the above");
 
+
+    /* correct answers */
+var answerKey = [];
+answerKey.push("To design HTML elements on a webpage",
+"Greenl alkdj k jk j",
+"The contents of a webpage",
+"Something cool",
+"The best fruit");
+
     /* timer */
 function timerCountdown() {
     var newInterval = setInterval(function () {
-        timeRemaining--;
-        document.getElementById("timeRemaining").textContent = timeRemaining;
-    }, 1000)
+        if (timeRemaining >0) {
 
+            timeRemaining--;
+            document.getElementById("timeRemaining").textContent = timeRemaining;
+        }
+        else {
+            document.getElementById("containerdiv").style.display = "none";
+            document.getElementById("form").style.display = "block";
+        }
+        }, 1000)
 }
 
 function startQuiz() {
@@ -109,15 +124,13 @@ function questionDisplay() {
 /* counter function */
 function incrementCounter() {
     counter += 1;
+    console.log(options);
+    checkAnswer();
     questionDisplay();
 }
-generateBtn.addEventListener("click", startQuiz);
-console.log(generateBtn);
-// options.addEventListener("click", counter)
-for (i = 0; i < options.length; i++) {
-    console.log(options[i]);
 
-    options[i].addEventListener("click", incrementCounter)
+function checkAnswer() {
+
 }
 
 /* display on/off */
@@ -136,10 +149,12 @@ function displaySwitch () {
     }
 }
 
-while (timerRemaining > 0) {
-    document.getElementById("containerdiv").style.display = "block";
+
+generateBtn.addEventListener("click", startQuiz);
+for (i = 0; i < options.length; i++) {
+
+    
+    options[i].addEventListener("click", incrementCounter);
 }
 
-while (timeRemaining <= 0) {
-    document.getElementById("formdiv").style.display = "block";
-}
+

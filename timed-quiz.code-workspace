@@ -2,9 +2,7 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../../CWRU-VIRT-FSF-PT-07-2022-U-LOLC/04-Web-APIs/02-Challenge"
 		}
-	]
+	],
+	"settings": {}
 }
