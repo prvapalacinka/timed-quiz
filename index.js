@@ -13,7 +13,18 @@ var containerDiv = document.getElementById("containerdiv");
 
 /* counter variable */
 var counter = 1;
-
+var questions = [
+    {
+        question: "something?",
+        answers: ["a", "b", "c", "d"],
+        correctAnswer: "B"
+    },
+    {
+        question: "something?",
+        answers: ["a", "b", "c", "d"],
+        correctAnswer: "b"
+    },
+]
 /* Question arrays */
 var questionOne = [];
 questionOne.push("What is CSS used for?",
@@ -42,7 +53,7 @@ questionFour.push("What is code?",
     "No idea",
     "Brother man",
     "The best thing ever");
-    
+
 var questionFive = [];
 questionFive.push("What is banana?",
     "The best fruit",
@@ -51,18 +62,18 @@ questionFive.push("What is banana?",
     "All of the above");
 
 
-    /* correct answers */
+/* correct answers */
 var answerKey = [];
 answerKey.push("To design HTML elements on a webpage",
-"Greenl alkdj k jk j",
-"The contents of a webpage",
-"Something cool",
-"The best fruit");
+    "Greenl alkdj k jk j",
+    "The contents of a webpage",
+    "Something cool",
+    "The best fruit");
 
-    /* timer */
+/* timer */
 function timerCountdown() {
     var newInterval = setInterval(function () {
-        if (timeRemaining >0) {
+        if (timeRemaining > 0) {
 
             timeRemaining--;
             document.getElementById("timeRemaining").textContent = timeRemaining;
@@ -71,7 +82,7 @@ function timerCountdown() {
             document.getElementById("containerdiv").style.display = "none";
             document.getElementById("form").style.display = "block";
         }
-        }, 1000)
+    }, 1000)
 }
 
 function startQuiz() {
@@ -122,12 +133,14 @@ function questionDisplay() {
 }
 
 /* counter function */
-function incrementCounter() {
-    counter += 1;
-    console.log(options);
-    checkAnswer();
-    questionDisplay();
-}
+// function incrementCounter() {
+//     counter += 1;
+//     //console.log(options);
+//     var test = options[i];
+//     console.log(test);
+//     checkAnswer();
+//     questionDisplay();
+// }
 
 function checkAnswer() {
 
@@ -139,11 +152,11 @@ function containerDisplay() {
     if (timeRemaining <= 0) {
         document.getElementById("containerdiv").style.display = "none";
         document.getElementById("formdiv").style.display = "block";
-       
+
     }
 }
 
-function displaySwitch () {
+function displaySwitch() {
     if (timeRemaining <= 0) {
         containerDisplay();
     }
@@ -151,10 +164,18 @@ function displaySwitch () {
 
 
 generateBtn.addEventListener("click", startQuiz);
-for (i = 0; i < options.length; i++) {
 
-    
-    options[i].addEventListener("click", incrementCounter);
+for (i = 0; i < options.length; i++) {
+    var test = options[i];
+
+    options[i].addEventListener("click", function () {
+        counter += 1;
+        //console.log(options);
+
+        console.log(test);
+        checkAnswer();
+        questionDisplay();
+    });
 }
 
 
