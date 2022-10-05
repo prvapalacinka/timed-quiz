@@ -176,5 +176,18 @@ button:active {
 }
 
 #form {
-    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -400px;
+    border-radius: 15px;
+    display: block;
+    align-items: center;
+    height: 500px;
+    width: 800px;
+    border: 15px solid #fca311;
+    background-color: #14213d;
+    color: #ffffff;
+    padding: 20px;
 }
