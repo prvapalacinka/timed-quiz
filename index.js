@@ -1,8 +1,8 @@
 var generateBtn = document.querySelector("#start");
 var optionList = document.getElementById("optionList");
-var options = document.querySelectorAll(".option");
+var options = document.querySelectorAll(".option"); //options
 var timeRemaining = 60;
-var question = document.getElementById("question");
+var question = document.getElementById("question"); //question
 var optionOne = document.getElementById("option1");
 var optionTwo = document.getElementById("option2");
 var optionThree = document.getElementById("option3");
@@ -12,7 +12,7 @@ var optionFour = document.getElementById("option4");
 var containerDiv = document.getElementById("containerdiv");
 
 /* counter variable */
-var counter = 1;
+var counter = 0;
 var questions = [
     {
         question: "What does HTML stand for?",
@@ -94,8 +94,7 @@ function timerCountdown() {
             document.getElementById("timeRemaining").textContent = timeRemaining;
         }
         else {
-            document.getElementById("containerdiv").style.display = "none";
-            document.getElementById("form").style.display = "block";
+            containerDisplay();
         }
     }, 1000)
 }
@@ -107,22 +106,28 @@ function startQuiz() {
 }
 
 function questionDisplay() {
-    if (counter == 1) {
-        question.textContent = questions.question[0];
-        console.log(questions[1]);
-    }
-    else if (counter ==2) {
-        optionOne.textContent = questions[1];
-    }
-    else if (counter ==3) {
-        optionOne.textContent = questions[2];
-    }
-    else if (counter ==4) {
-        optionOne.textContent = questions[3];
-    }
-    else if (counter ==5) {
-        optionOne.textContent = questions[4];
-    }
+    question.textContent = questions[counter].question
+    let i = 0
+    options.forEach(element => {
+        element.textContent = questions[counter].answers[i];
+        i++;
+    })
+    // if (counter == 1) {
+    //     question.textContent = questions.question[0];
+    //     console.log(questions[1]);
+    // }
+    // else if (counter ==2) {
+    //     optionOne.textContent = questions[1];
+    // }
+    // else if (counter ==3) {
+    //     optionOne.textContent = questions[2];
+    // }
+    // else if (counter ==4) {
+    //     optionOne.textContent = questions[3];
+    // }
+    // else if (counter ==5) {
+    //     optionOne.textContent = questions[4];
+    // }
 }
 
 // function questionDisplay() {
@@ -181,11 +186,11 @@ function checkAnswer() {
 /* display on/off */
 /* run func prior */
 function containerDisplay() {
-    if (timeRemaining <= 0) {
-        document.getElementById("containerdiv").style.display = "none";
-        document.getElementById("formdiv").style.display = "block";
 
-    }
+    document.getElementById("containerdiv").style.display = "none";
+    document.getElementById("formdiv").style.display = "block";
+
+
 }
 
 function displaySwitch() {
@@ -201,12 +206,18 @@ for (i = 0; i < options.length; i++) {
     var test = options[i];
 
     options[i].addEventListener("click", function () {
-        counter += 1;
+
         //console.log(options);
 
         console.log(test);
         checkAnswer();
-        questionDisplay();
+        if (counter < questions.length - 1) {
+            counter++
+            questionDisplay();
+        }
+        else {
+            containerDisplay();
+        }
     });
 }
 
