@@ -7,7 +7,8 @@ var optionOne = document.getElementById("option1");
 var optionTwo = document.getElementById("option2");
 var optionThree = document.getElementById("option3");
 var optionFour = document.getElementById("option4");
-
+var score = 0;
+var correction = document.getElementById("correction");
 /* var for container on/off display */
 var containerDiv = document.getElementById("containerdiv");
 
@@ -179,10 +180,18 @@ function questionDisplay() {
 //     questionDisplay();
 // }
 
-function checkAnswer() {
-
+function checkAnswer(event) {
+let userAnswer = event.target.textContent
+    console.log(userAnswer);
+if (userAnswer == questions[counter].correctAnswer){
+    score += 1
+    correction.textContent = "You have answered correctly. Current Score:"+score
 }
-
+else {
+    timeRemaining -= 10;
+    correction.textContent = "You have answered incorrectly. Current Score:"+score
+}
+}
 /* display on/off */
 /* run func prior */
 function containerDisplay() {
@@ -205,12 +214,11 @@ generateBtn.addEventListener("click", startQuiz);
 for (i = 0; i < options.length; i++) {
     var test = options[i];
 
-    options[i].addEventListener("click", function () {
+    options[i].addEventListener("click", function (event) {
 
         //console.log(options);
-
-        console.log(test);
-        checkAnswer();
+;
+        checkAnswer(event);
         if (counter < questions.length - 1) {
             counter++
             questionDisplay();
