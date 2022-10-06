@@ -1,4 +1,6 @@
 var generateBtn = document.querySelector("#start");
+var scoreBtn = document.querySelector("#initialsuserscore");
+var input = document.getElementsByClassName('form-group');
 var optionList = document.getElementById("optionList");
 var options = document.querySelectorAll(".option"); //options
 var timeRemaining = 60;
@@ -42,6 +44,13 @@ var questions = [
         correctAnswer: "JS"
     },
 ]
+
+// User score:
+var userScoreArray = [];
+
+if (localStorage.getItem('savedScoreArray')) {
+    userScoreArray = JSON.parse(localStorage).getItem('savedScoreArray');
+}
 
 function timerCountdown() {
     var newInterval = setInterval(function () {
@@ -122,4 +131,15 @@ for (i = 0; i < options.length; i++) {
     });
 }
 
+scoreBtn.addEventListener("click", userScore);
 
+function userScore () {
+    var highScore = {
+        name: input.value,
+        score: score
+    }
+
+userScoreArray.push(highScore);
+localStorage.setItem('savedScoreArray'), JSON.stringify(userScoreArray);
+console.log('worked');
+}
